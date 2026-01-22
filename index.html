@@ -1,53 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Anay Singh | Portfolio</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+      background-color: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #7dd3fc;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .hero {
+      margin-bottom: 60px;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      color: #cfcfcf;
+      max-width: 700px;
+    }
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      border-bottom: 1px solid #2a2a2a;
+      padding-bottom: 8px;
+    }
+
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .skill-box {
+      background: #171717;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project {
+      background: #171717;
+      padding: 25px;
+      border-radius: 12px;
+    }
+
+    .project h3 {
+      margin-top: 0;
+    }
+
+    .project p {
+      color: #d4d4d4;
+      font-size: 0.95rem;
+    }
+
+    .footer {
+      text-align: center;
+      color: #9a9a9a;
+      font-size: 0.9rem;
+      border-top: 1px solid #2a2a2a;
+      padding-top: 20px;
+    }
+  </style>
 </head>
-<body style="font-family: Arial; max-width: 900px; margin: auto; padding: 24px;">
 
-  <h1>Anay Singh</h1>
-  <p><b>BS Data Science student at IIT Madras</b></p>
-  <p>Interested in Data Analytics, Backend Development, and Applied Machine Learning</p>
+<body>
 
-  <hr>
+  <div class="container">
 
-  <h2>About Me</h2>
-  <p>
-    I am a Data Science undergraduate at IIT Madras with hands-on experience in Python, SQL,
-    data analysis, and backend development using Flask. I enjoy working on real-world datasets
-    and building practical, data-driven solutions.
-  </p>
+    <!-- HERO -->
+    <div class="hero">
+      <h1>Anay Singh</h1>
+      <p>
+        BS Data Science student at IIT Madras.  
+        Interested in data analytics, backend development, and applied machine learning.
+        I enjoy building practical, data-driven solutions and continuously improving my technical foundation.
+      </p>
+      <p>
+        <a href="https://github.com/anay-repo" target="_blank">GitHub</a> ·
+        <a href="https://www.linkedin.com/in/anay-singh-6a21402a8" target="_blank">LinkedIn</a> ·
+        inbox.anaysingh@gmail.com
+      </p>
+    </div>
 
-  <h2>Skills</h2>
-  <ul>
-    <li><b>Programming:</b> Python, SQL</li>
-    <li><b>Backend:</b> Flask, REST APIs, SQLAlchemy</li>
-    <li><b>Data:</b> Pandas, NumPy, Excel, EDA</li>
-    <li><b>Tools:</b> Git, Jupyter Notebook</li>
-  </ul>
+    <!-- ABOUT -->
+    <section>
+      <h2>About</h2>
+      <p>
+        I am a Data Science undergraduate at IIT Madras with hands-on experience in Python, SQL,
+        data analysis, and backend development using Flask. My interests lie in working with real-world datasets,
+        building backend APIs, and exploring machine learning and generative AI tools at a foundational level.
+      </p>
+    </section>
 
-  <h2>Projects</h2>
-  <ul>
-    <li>
-      <b>QuizMaster – Web-Based Quiz System</b><br>
-      Flask-based backend application with user authentication, quizzes, scoring,
-      and performance tracking.<br>
-      🔗 <a href="https://github.com/anay-repo/QuizMaster_V1" target="_blank">GitHub</a>
-    </li>
-    <br>
-    <li>
-      <b>Retail Business Data Analytics</b><br>
-      Analyzed sales and inventory data for a real retail business to identify
-      dead stock and improve profitability.<br>
-      🔗 <a href="https://github.com/anay-repo/BDM_project" target="_blank">GitHub</a>
-    </li>
-  </ul>
+    <!-- SKILLS -->
+    <section>
+      <h2>Skills</h2>
 
-  <h2>Contact</h2>
-  <p>Email: inbox.anaysingh@gmail.com</p>
-  <p>GitHub: <a href="https://github.com/anay-repo">anay-repo</a></p>
-  <p>LinkedIn: (www.linkedin.com/in/anay-singh-6a21402a8)</p>
+      <div class="skills">
+        <div class="skill-box">
+          <b>Programming & Backend</b>
+          <p>
+            Python, SQL, Flask, REST APIs, SQLAlchemy<br>
+            Basic understanding of backend architecture and API design
+          </p>
+        </div>
+
+        <div class="skill-box">
+          <b>Data & Analytics</b>
+          <p>
+            Pandas, NumPy, Excel, EDA<br>
+            Power BI (basic dashboards and reports)
+          </p>
+        </div>
+
+        <div class="skill-box">
+          <b>Machine Learning (Foundational)</b>
+          <p>
+            Scikit-learn, basic regression & classification models,<br>
+            data preprocessing and model evaluation
+          </p>
+        </div>
+
+        <div class="skill-box">
+          <b>Databases & Caching (Basic)</b>
+          <p>
+            SQLite, PostgreSQL (basic), Redis (introductory usage)
+          </p>
+        </div>
+
+        <div class="skill-box">
+          <b>GenAI Tools (Exploratory)</b>
+          <p>
+            ChatGPT, Gemini, Claude<br>
+            Prompting, experimentation, and productivity use-cases
+          </p>
+        </div>
+
+        <div class="skill-box">
+          <b>Tools</b>
+          <p>
+            Git, GitHub, Jupyter Notebook, VS Code
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section>
+      <h2>Projects</h2>
+
+      <div class="projects">
+
+        <div class="project">
+          <h3>QuizMaster – Web-Based Quiz System</h3>
+          <p>
+            A Flask-based quiz application with user authentication, quiz management,
+            scoring, and performance tracking.
+          </p>
+          <p>
+            <b>Tech:</b> Python, Flask, SQLAlchemy, SQLite
+          </p>
+          <a href="https://github.com/anay-repo/QuizMaster_V1" target="_blank">View on GitHub →</a>
+        </div>
+
+        <div class="project">
+          <h3>Retail Business Data Analytics</h3>
+          <p>
+            Analyzed sales and inventory data for a real retail business to identify
+            dead stock, optimize inventory decisions, and improve profitability.
+          </p>
+          <p>
+            <b>Tech:</b> Python, Pandas, Excel
+          </p>
+          <a href="https://github.com/anay-repo/BDM_project" target="_blank">View on GitHub →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <div class="footer">
+      © 2026 Anay Singh · Built with GitHub Pages
+    </div>
+
+  </div>
 
 </body>
 </html>
+
