@@ -3,56 +3,117 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-
 <title>Anaypal Singh | Portfolio</title>
 
-<link rel="stylesheet"
-href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <style>
+
+:root {
+  --bg: #0b0f13;
+  --surface: #12181e;
+  --surface-2: #171f26;
+  --line: #232d36;
+  --text: #e9eef2;
+  --text-dim: #8ea0ac;
+  --amber: #e3a13c;
+  --teal: #57d0c2;
+  --mono: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
+}
+
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background-color: #0f0f0f;
-  color: #f5f5f5;
-  line-height: 1.6;
+  background:
+    radial-gradient(1100px 500px at 85% -10%, rgba(227,161,60,0.08), transparent 60%),
+    radial-gradient(900px 500px at -10% 20%, rgba(87,208,194,0.06), transparent 55%),
+    var(--bg);
+  color: var(--text);
+  line-height: 1.65;
 }
 
-a {
-  color: #7dd3fc;
-  text-decoration: none;
+a { color: var(--teal); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 980px; margin: auto; padding: 56px 24px 40px; }
+
+/* ---------- HERO ---------- */
+.hero { margin-bottom: 56px; }
+
+.eyebrow {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  letter-spacing: 0.12em;
+  color: var(--amber);
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 18px;
 }
 
-a:hover {
-  text-decoration: underline;
-}
-
-.container {
-  max-width: 1000px;
-  margin: auto;
-  padding: 40px 20px;
-}
-
-.hero {
-  margin-bottom: 60px;
+.eyebrow .dot {
+  width: 7px; height: 7px; border-radius: 50%;
+  background: var(--amber);
+  box-shadow: 0 0 0 3px rgba(227,161,60,0.18);
 }
 
 .hero h1 {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: clamp(2.3rem, 5vw, 3.2rem);
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+  font-weight: 700;
 }
 
-.hero p {
-  font-size: 1.1rem;
-  color: #cfcfcf;
-  max-width: 700px;
+.hero .tagline {
+  font-size: 1.08rem;
+  color: var(--text-dim);
+  max-width: 620px;
+  margin: 0 0 26px;
 }
+
+/* readout strip - signature element */
+.readout {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  overflow: hidden;
+  background: var(--surface);
+  margin-bottom: 28px;
+}
+
+.readout-cell {
+  flex: 1 1 160px;
+  padding: 14px 18px;
+  border-right: 1px solid var(--line);
+}
+.readout-cell:last-child { border-right: none; }
+
+.readout-cell .k {
+  font-family: var(--mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+  display: block;
+  margin-bottom: 4px;
+}
+
+.readout-cell .v {
+  font-size: 0.98rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.readout-cell .v.amber { color: var(--amber); }
+.readout-cell .v.teal { color: var(--teal); }
 
 .hero-links {
-  margin-top: 20px;
   display: flex;
-  gap: 18px;
+  gap: 14px;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -62,82 +123,194 @@ a:hover {
   align-items: center;
   gap: 8px;
   font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+  padding: 9px 14px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  transition: 0.2s;
+}
+.hero-links a:hover {
+  text-decoration: none;
+  border-color: var(--teal);
+  color: var(--teal);
 }
 
-.hero-links i {
-  font-size: 18px;
-}
+.hero-links i { font-size: 16px; }
 
 .resume-btn {
-  padding: 10px 18px;
-  border-radius: 10px;
-  background: #7dd3fc;
-  color: #0f0f0f;
+  background: var(--amber);
+  color: #17110a !important;
   font-weight: 700;
-  font-size: 0.95rem;
-  transition: 0.25s;
+  border: 1px solid var(--amber) !important;
 }
-
 .resume-btn:hover {
-  background: #38bdf8;
-  transform: translateY(-2px);
+  background: #f0b558;
+  border-color: #f0b558 !important;
+  color: #17110a !important;
 }
 
-section {
-  margin-bottom: 60px;
+/* ---------- SECTIONS ---------- */
+section { margin-bottom: 52px; }
+
+.section-head {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin-bottom: 22px;
 }
 
 h2 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
-  border-bottom: 1px solid #2a2a2a;
-  padding-bottom: 8px;
+  font-size: 1.35rem;
+  margin: 0;
+  font-weight: 700;
 }
 
+.section-head .tag {
+  font-family: var(--mono);
+  font-size: 0.72rem;
+  color: var(--text-dim);
+  letter-spacing: 0.06em;
+}
+
+.section-head::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--line);
+}
+
+/* about */
+.about p { color: #cbd6dd; max-width: 700px; margin: 0; }
+
+/* skills */
 .skills {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 14px;
 }
 
 .skill-box {
-  background: #171717;
-  padding: 20px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  padding: 18px 20px;
   border-radius: 10px;
 }
 
+.skill-box b {
+  display: block;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--amber);
+  margin-bottom: 8px;
+}
+
+.skill-box p { margin: 0; color: #cbd6dd; font-size: 0.92rem; }
+
+/* experience */
+.exp-item {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 3px solid var(--teal);
+  padding: 20px 22px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.exp-item:last-child { margin-bottom: 0; }
+
+.exp-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.exp-top h3 { margin: 0; font-size: 1.05rem; }
+
+.exp-top .when {
+  font-family: var(--mono);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+}
+
+.exp-where {
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+.exp-item ul { margin: 0; padding-left: 20px; color: #cbd6dd; font-size: 0.93rem; }
+.exp-item li { margin-bottom: 5px; }
+.exp-item li:last-child { margin-bottom: 0; }
+
+/* projects */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 25px;
+  gap: 20px;
 }
 
 .project {
-  background: #171717;
-  padding: 25px;
-  border-radius: 12px;
-  transition: 0.25s;
+  background: var(--surface);
+  padding: 22px;
+  border-radius: 10px;
+  border: 1px solid var(--line);
+  transition: 0.2s;
+  display: flex;
+  flex-direction: column;
 }
 
 .project:hover {
-  transform: translateY(-6px);
+  transform: translateY(-4px);
+  border-color: var(--amber);
 }
 
 .project h3 {
-  margin-top: 0;
+  margin: 0 0 8px;
+  font-size: 1.05rem;
 }
 
-.project p {
-  color: #d4d4d4;
-  font-size: 0.95rem;
+.project p.desc {
+  color: #cbd6dd;
+  font-size: 0.92rem;
+  margin: 0 0 12px;
+  flex-grow: 1;
 }
 
+.stack {
+  font-family: var(--mono);
+  font-size: 0.74rem;
+  color: var(--text-dim);
+  margin-bottom: 14px;
+  letter-spacing: 0.02em;
+}
+
+.project a.repo-link {
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* footer */
 .footer {
   text-align: center;
-  color: #9a9a9a;
-  font-size: 0.9rem;
-  border-top: 1px solid #2a2a2a;
-  padding-top: 20px;
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--line);
+  padding-top: 22px;
+  font-family: var(--mono);
+}
+
+@media (max-width: 600px) {
+  .exp-top { flex-direction: column; }
 }
 
 </style>
@@ -149,129 +322,138 @@ h2 {
 
 <!-- HERO -->
 <div class="hero">
+  <div class="eyebrow"><span class="dot"></span> student · data science &amp; reinforcement learning</div>
   <h1>Anaypal Singh</h1>
-  <p>BS, Data Science – Indian Institute of Technology Madras (2023–2027)</p>
+  <p class="tagline">
+    BS, Data Science and Applications — Indian Institute of Technology, Madras (2023–2027).
+    Building ML systems that hold up against messy, real-world data — from chemical process control to full-stack apps.
+  </p>
+
+  <div class="readout">
+    <div class="readout-cell">
+      <span class="k">RL Focus</span>
+      <span class="v amber">TD3 / SAC agents</span>
+    </div>
+    <div class="readout-cell">
+      <span class="k">Best Result</span>
+      <span class="v teal">&ge;90% pollutant removal</span>
+    </div>
+    <div class="readout-cell">
+      <span class="k">Research</span>
+      <span class="v">Ahmedabad University</span>
+    </div>
+  </div>
 
   <div class="hero-links">
-    <a href="https://github.com/anay-repo" target="_blank">
-      <i class="fa-brands fa-github"></i> GitHub
+    <a href="https://github.com/anay-repo" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+    <a href="http://www.linkedin.com/in/anay-singh-6a21402a8" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+    <a href="mailto:inbox.anaysingh@gmail.com"><i class="fa-solid fa-envelope"></i> Email</a>
+    <a href="https://drive.google.com/uc?export=download&id=1tNlvAt6A6-KzMLh3VKqv_8dCVxds3TrL" target="_blank" class="resume-btn">
+      <i class="fa-solid fa-download"></i> Download Resume
     </a>
-
-    <a href="https://www.linkedin.com/in/anay-singh-6a21402a8" target="_blank">
-      <i class="fa-brands fa-linkedin"></i> LinkedIn
-    </a>
-
-    <a href="https://drive.google.com/uc?export=download&id=1w5laHtKV9Qoa6lyskmo28UsIwfO1-7yU"
-       target="_blank"
-       class="resume-btn">
-       <i class="fa-solid fa-download"></i> Download Resume
-    </a>
-
-    <span>
-      <i class="fa-solid fa-envelope"></i>
-      inbox.anaysingh@gmail.com
-    </span>
   </div>
 </div>
 
 <!-- ABOUT -->
-<section>
-<h2>About</h2>
-<p>
-Highly driven Data Science and AI enthusiast with a strong foundation in Python, SQL, machine learning, and data analytics, focused on building scalable, real-world solutions.
-Adept at quickly mastering new technologies and solving complex problems.
-</p>
+<section class="about">
+  <div class="section-head"><h2>About</h2><span class="tag">01</span></div>
+  <p>
+    Data science student with a strong foundation in Python, SQL, machine learning, and analytics — focused on
+    building scalable, real-world solutions. Core research interest is reinforcement learning applied to
+    chemical process optimization, alongside hands-on full-stack development experience.
+  </p>
 </section>
 
 <!-- SKILLS -->
 <section>
-<h2>Skills</h2>
-<div class="skills">
-
-<div class="skill-box">
-<b>Programming & Backend</b>
-<p>Python, SQL, Flask, REST APIs, SQLAlchemy</p>
-</div>
-
-<div class="skill-box">
-<b>Data & Analytics</b>
-<p>Pandas, NumPy, Excel, EDA, Power BI</p>
-</div>
-
-<div class="skill-box">
-<b>Machine Learning</b>
-<p>Scikit-learn, regression & classification, model evaluation</p>
-</div>
-
-<div class="skill-box">
-<b>Databases</b>
-<p>SQLite, PostgreSQL, Redis</p>
-</div>
-
-<div class="skill-box">
-<b>GenAI Tools</b>
-<p>ChatGPT, Gemini, Claude</p>
-</div>
-
-<div class="skill-box">
-<b>Tools</b>
-<p>Git, GitHub, Jupyter Notebook, VS Code</p>
-</div>
-
-</div>
+  <div class="section-head"><h2>Skills</h2><span class="tag">02</span></div>
+  <div class="skills">
+    <div class="skill-box">
+      <b>Languages</b>
+      <p>Python, SQL, Java, HTML/CSS</p>
+    </div>
+    <div class="skill-box">
+      <b>ML &amp; Data Science</b>
+      <p>Scikit-learn, LightGBM, Reinforcement Learning (TD3, SAC), NumPy, Pandas, Matplotlib, Power BI</p>
+    </div>
+    <div class="skill-box">
+      <b>Web Frameworks</b>
+      <p>Flask, VueJS, SQLAlchemy, Jinja2, Bootstrap</p>
+    </div>
+    <div class="skill-box">
+      <b>Generative AI &amp; Tools</b>
+      <p>LangChain, RAG, Basic LLM Fine-tuning, Gradio, Hugging Face</p>
+    </div>
+    <div class="skill-box">
+      <b>Databases</b>
+      <p>PostgreSQL, Redis, SQLite</p>
+    </div>
+    <div class="skill-box">
+      <b>Tools &amp; Platforms</b>
+      <p>Git, Docker, Celery, Jupyter Notebook, VS Code</p>
+    </div>
+  </div>
 </section>
 
 <!-- EXPERIENCE -->
 <section>
-<h2>Experience</h2>
+  <div class="section-head"><h2>Experience</h2><span class="tag">03</span></div>
 
-<div class="projects">
-<div class="project">
-<h3>Full Stack Development Intern – VLED Labs, IIT Ropar</h3>
-
-<p>
-Working on full-stack projects using React, TypeScript, Express.js, and MongoDB.
-Building backend logic, REST APIs, and handling structured data workflows across the stack.
-</p>
-
-<p>
-<b>Duration:</b> Feb 2026 – Present | Rupnagar, Punjab – Remote
-</p>
-
-</div>
-</div>
+  <div class="exp-item">
+    <div class="exp-top">
+      <h3>Machine Learning Research Intern — Ahmedabad University</h3>
+      <span class="when">May 2026 – Jul 2026</span>
+    </div>
+    <div class="exp-where">
+      Ahmedabad, Gujarat &nbsp;·&nbsp;
+      <a href="https://lnkd.in/p/gTN_kfGq" target="_blank">Certificate</a>
+    </div>
+    <ul>
+      <li>Researched and compared TD3 and SAC reinforcement learning algorithms for flue gas treatment (NOx/SO2 removal) in a simulated bubble column reactor.</li>
+      <li>Debugged and extended a custom Gymnasium environment, resolving chemistry-modeling issues (mass-transfer clamping, rate constants, reward shaping) to stabilize training.</li>
+      <li>Achieved &ge;90% pollutant removal efficiency with the SAC agent, validated against professor-defined chemistry constraints.</li>
+    </ul>
+  </div>
 </section>
 
 <!-- PROJECTS -->
 <section>
-<h2>Projects</h2>
+  <div class="section-head"><h2>Projects</h2><span class="tag">04</span></div>
 
-<div class="projects">
+  <div class="projects">
 
-<div class="project">
-<h3>QuizMaster – Web-Based Quiz System</h3>
-<p>A Flask-based quiz application with authentication and performance tracking.</p>
-<p><b>Tech:</b> Python, Flask, SQLAlchemy, SQLite</p>
-<a href="https://github.com/anay-repo/QuizMaster_V1" target="_blank">
-View on GitHub →
-</a>
-</div>
+    <div class="project">
+      <h3>Placement Portal Application</h3>
+      <p class="desc">Full-stack placement management system connecting students, companies, and admins through role-based dashboards, with an async task pipeline for resume exports and automated notifications.</p>
+      <div class="stack">Flask · VueJS · Celery · Redis · SQLAlchemy</div>
+      <a class="repo-link" href="https://github.com/anay-repo/placement-portal" target="_blank">View on GitHub →</a>
+    </div>
 
-<div class="project">
-<h3>Retail Business Data Analytics</h3>
-<p>Analyzed sales and inventory data to optimize stock and improve profitability.</p>
-<p><b>Tech:</b> Python, Pandas, Excel</p>
-<a href="https://github.com/anay-repo/BDM_project" target="_blank">
-View on GitHub →
-</a>
-</div>
+    <div class="project">
+      <h3>QuizMaster — Web-Based Quiz System</h3>
+      <p class="desc">Full-stack quiz management system enabling timed tests, instant scoring, and structured performance analytics, with a Flask + SQLAlchemy backend and Jinja-driven UI.</p>
+      <div class="stack">Python · Flask · SQLAlchemy · SQLite</div>
+      <a class="repo-link" href="https://github.com/anay-repo/QuizMaster_V1" target="_blank">View on GitHub →</a>
+    </div>
 
-</div>
+    <div class="project">
+      <h3>Comment Category Prediction</h3>
+      <p class="desc">Classical ML pipeline classifying 198K+ user comments into 4 categories using word- and character-level TF-IDF with engineered features; tuned LightGBM to 91% accuracy and deployed a live demo.</p>
+      <div class="stack">Python · Scikit-learn · LightGBM · NLP</div>
+      <a class="repo-link" href="https://github.com/anay-repo/comment-category-predictor" target="_blank">View on GitHub →</a>
+    </div>
+
+    <div class="project">
+      <h3>Retail Sales Analytics</h3>
+      <p class="desc">Analyzed ₹8L+ sales data across 1,000+ transactions for a 60-year-old retail business, applying ABC analysis to flag ₹1.5L+ in slow-moving stock and projecting 25% profit growth.</p>
+      <div class="stack">Python · Analytics · Excel</div>
+      <a class="repo-link" href="https://anay-repo.github.io/BDM_project/" target="_blank">View Live Project →</a>
+    </div>
+
+  </div>
 </section>
 
-<div class="footer">
-© 2026 Anay Singh · Built with GitHub Pages
-</div>
+<div class="footer">© 2026 Anaypal Singh · Built with GitHub Pages</div>
 
 </div>
 </body>
